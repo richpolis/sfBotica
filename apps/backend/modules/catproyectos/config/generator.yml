@@ -1,0 +1,44 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           CategoriasProyectos
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          categorias_proyectos
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        categoria:  {label: Categoria }
+        position:   {label: Orden }
+        is_active:  {label: Activa }
+      list:
+        title:    Portafolio
+        display:  [position,categoria,is_active]
+        sort:     [position, asc]
+        object_actions:
+          Arriba:
+            action: promote
+          Abajo:
+            action: demote
+          _edit:    {label: Editar }
+          _delete:  {label: Eliminar }
+      filter:  {}
+      form: 
+        actions:
+          _list: {label: Regresar a Lista}
+          _save: {label: Guardar }   
+      edit:
+        title:               Modificar categoria "%%categoria%%"
+        display:
+          "Proyectos":   [_photoUpload]
+          "Categoria":      [categoria,is_active]
+      new:
+        title:               Crear categoria
+        display:
+          "Categoria":       [categoria, is_active]

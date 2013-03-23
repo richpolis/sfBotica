@@ -1,0 +1,39 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Configuracion
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          configuracion
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        seccion: {label: Seccion }
+        value: {label: Valor }
+        imagen: { label: Imagen }
+        created_at: { label: Creado, date_format: 'dd/MM/y' }
+      list:    
+        title: Opciones de configuracion
+        sort: [seccion, asc]
+        display: [id,seccion, _contenido, _imagen,created_at]
+        object_actions:
+          _edit: {label: Editar}
+          _delete: {label: Eliminar}
+        actions: 
+          _new:    { label: Nueva }
+        batch_actions: {}  
+      filter:  {}
+      form: 
+        actions:
+          _list: {label: Regresar a Lista}
+          _save: {label: Guardar }
+      edit:    
+        title: Editar registro %%seccion%%
+      new:     
+        title: Nuevo registro

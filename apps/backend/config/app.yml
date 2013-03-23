@@ -1,0 +1,59 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  sfImageTransformPlugin:
+    default_adapter: GD
+    mime_type:
+      auto_detect: true
+      library: gd_mime_type
+  sf_admin_dash:
+    web_dir:                    /sfAdminDashPlugin
+    image_dir:                  /sfAdminDashPlugin/images/icons/
+    default_image:              config.png
+    resize_mode:                thumbnail
+    site:                       'Botica'
+    include_path:               true
+    include_jquery_no_conflict: false
+    logout:                     true
+    login_route:                @sf_guard_signin
+    logout_route:               @sf_guard_signout
+    categories:
+      Administracion:
+        items:
+          'Usuarios':
+            url:          sf_guard_user
+            image:        users.png
+            credentials:  [admin]
+          Grupos:
+            url:          sf_guard_group
+            image:        addusers.png
+            credentials:  [admin]
+          Permisos:
+            url:          sf_guard_permission
+            image:        config.png
+            credentials:  [admin]
+          Configuracion:
+            url:          configuracion
+            image:        cpanel.png
+            credentials:  [admin]
+          Paginas:
+            url:          paginas
+            image:        cpanel.png
+            credentials:  [admin]  
+      Publicaciones:
+        items:
+          'Publicaciones':
+            url:          categorias_publicaciones
+            image:        mediamanager.png
+            credentials:  [[publicaciones,admin]]
+          'Portafolio':
+            url:          categorias_proyectos
+            image:        mediamanager.png
+            credentials:  [[publicaciones,admin]]
+          'Clientes':
+            url:          clientes
+            image:        mediamanager.png
+            credentials:  [[publicaciones,admin]]  
+      

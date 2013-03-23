@@ -1,0 +1,41 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           ProyectosGaleria
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          proyectos_galeria
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        publicacion_id: {label: Publicacion}
+        proyectos: {label: Publicacion}
+        position: {label: Orden}
+        titulo: {label: Titulo}
+        
+      list:
+        title: Galeria de Proyectos
+        display: [proyectos,position,titulo]
+        sort: [position, asc]
+        object_actions:
+          _edit: {label: Editar}
+          _delete: {label: Eliminar}
+#        table_method: retrieveBackendPublicacionesList
+      filter:  ~
+      form:    
+      edit:
+        title:            Modificar Registro de Galeria de Proyectos "%%titulo%%"
+        display:
+          "Registro":     [publicacion_id,titulo,contenido]
+          "Archivo":      [archivo,thumbnail]
+      new:
+        title:            Crear Registro de Galeria de Proyectos
+        display:
+          "Registro":     [publicacion_id,titulo,contenido]
+          "Archivo":      [archivo,thumbnail]

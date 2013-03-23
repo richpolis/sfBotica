@@ -1,0 +1,33 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/07-Databases
+
+dev:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=localhost;dbname=sfbotica
+      username: root
+      password: root
+      persistent: true
+
+
+#phrenesis
+#prod:
+#  doctrine:
+#    class: sfDoctrineDatabase
+#    param:
+#      dsn:      mysql:host=localhost;dbname=phrenesi_jerryml
+#      username: phrenesi_jerryml
+#      password: ]H{c4pWMi*D@
+#      persistent: true
+
+#interactivevalley.com
+prod:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+      dsn:      mysql:host=localhost;dbname=phrenesi_botica
+      username: phrenesi_rpsstms
+      password: D3m3s1s1
+      persistent: true
+      

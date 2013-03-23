@@ -1,0 +1,84 @@
+nosotros:
+  url:   /nosotros
+  param: { module: home, action: nosotros }
+  
+servicios:
+  url:   /servicios
+  param: { module: home, action: servicios }
+  
+clientes:
+  url:   /clientes
+  param: { module: home, action: clientes }  
+
+contacto:
+  url:   /contacto
+  param: { module: home, action: contacto }
+
+proyectos:
+  url:   /proyectos
+  param: { module: proyectos, action: index }
+
+proyectos_categoria:
+  url: /proyectos/:slug
+  class:   sfDoctrineRoute
+  options: { model: CategoriasProyectos, type: object }
+  param: {module: proyectos, action: categoria}
+
+proyectos_publicacion:
+  url: /proyectos/:categoria_slug/:slug
+  class:   sfDoctrineRoute
+  options: { model: Proyectos, type: object }
+  param: {module: proyectos, action: publicacion}
+
+
+publicaciones:
+  url: /publicaciones
+  param: {module: publicaciones, action: index}
+
+publicaciones_categoria:
+  url: /publicaciones/:slug
+  class:   sfDoctrineRoute
+  options: { model: CategoriasPublicaciones, type: object }
+  param: {module: publicaciones, action: categoria}
+
+publicaciones_publicacion:
+  url: /publicacion/:categoria_slug/:slug
+  class:   sfDoctrineRoute
+  options: { model: Publicaciones, type: object }
+  param: {module: publicaciones, action: publicacion}
+
+render_imagenes:
+  url:      /imagenes/:path/:width/:height/:imagen.:sf_format
+  param: { module: home, action: renderImagen } 
+  requirements:
+    imagen:  '[\w/]+'
+    sf_format: 'gif|png|jpg|jpeg|JPG'
+    path: 'assets|publicaciones|proyectos|clientes'
+    sf_method: [get]
+  options:
+    image_source: File 
+
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+        
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+        
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password } 
+ 
+ 
+inicio:
+  url: /inicio
+  param: { module: home, action: index }
+
+construccion:
+  url: /construccion
+  param: { module: home, action: construccion }
+
+homepage:
+  url:   /
+  param: { module: home, action: construccion }

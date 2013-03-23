@@ -1,0 +1,902 @@
+/* 
+    Document   : main
+    Created on : 23/02/2013, 06:00:19 PM
+    Author     : richpolis
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+
+@font-face {
+    font-family: 'KlavikaBasicRegularItalicRg';
+    src: url('/fonts/klavikabasic-regularitalic-webfont.eot');
+    src: url('/fonts/klavikabasic-regularitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/klavikabasic-regularitalic-webfont.woff') format('woff'),
+         url('/fonts/klavikabasic-regularitalic-webfont.ttf') format('truetype'),
+         url('/fonts/klavikabasic-regularitalic-webfont.svg#KlavikaBasicRegularItalicRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'KlavikaBasicLightRegular';
+    src: url('/fonts/klavikabasic-light-webfont.eot');
+    src: url('/fonts/klavikabasic-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/klavikabasic-light-webfont.woff') format('woff'),
+         url('/fonts/klavikabasic-light-webfont.ttf') format('truetype'),
+         url('/fonts/klavikabasic-light-webfont.svg#KlavikaBasicLightRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'KlavikaBasicLightItalicRg';
+    src: url('/fonts/klavikabasic-lightitalic-webfont.eot');
+    src: url('/fonts/klavikabasic-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/klavikabasic-lightitalic-webfont.woff') format('woff'),
+         url('/fonts/klavikabasic-lightitalic-webfont.ttf') format('truetype'),
+         url('/fonts/klavikabasic-lightitalic-webfont.svg#KlavikaBasicLightItalicRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'KlavikaBasicMediumRegular';
+    src: url('/fonts/klavikabasic-medium-webfont.eot');
+    src: url('/fonts/klavikabasic-medium-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/klavikabasic-medium-webfont.woff') format('woff'),
+         url('/fonts/klavikabasic-medium-webfont.ttf') format('truetype'),
+         url('/fonts/klavikabasic-medium-webfont.svg#KlavikaBasicMediumRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'KlavikaBasicMediumItalicRg';
+    src: url('/fonts/klavikabasic-mediumitalic-webfont.eot');
+    src: url('/fonts/klavikabasic-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/klavikabasic-mediumitalic-webfont.woff') format('woff'),
+         url('/fonts/klavikabasic-mediumitalic-webfont.ttf') format('truetype'),
+         url('/fonts/klavikabasic-mediumitalic-webfont.svg#KlavikaBasicMediumItalicRg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'KlavikaBasicRegularRegular';
+    src: url('/fonts/klavikabasic-regular-webfont.eot');
+    src: url('/fonts/klavikabasic-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/klavikabasic-regular-webfont.woff') format('woff'),
+         url('/fonts/klavikabasic-regular-webfont.ttf') format('truetype'),
+         url('/fonts/klavikabasic-regular-webfont.svg#KlavikaBasicRegularRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'KlavikaBasicBoldRegular';
+    src: url('/fonts/klavikabasic-bold-webfont.eot');
+    src: url('/fonts/klavikabasic-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/klavikabasic-bold-webfont.woff') format('woff'),
+         url('/fonts/klavikabasic-bold-webfont.ttf') format('truetype'),
+         url('/fonts/klavikabasic-bold-webfont.svg#KlavikaBasicBoldRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'KlavikaBasicBoldItalicRegular';
+    src: url('/fonts/klavikabasic-bolditalic-webfont.eot');
+    src: url('/fonts/klavikabasic-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/klavikabasic-bolditalic-webfont.woff') format('woff'),
+         url('/fonts/klavikabasic-bolditalic-webfont.ttf') format('truetype'),
+         url('/fonts/klavikabasic-bolditalic-webfont.svg#KlavikaBasicBoldItalicRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* ELEMENTS */
+
+html{
+	background: url(/images/html_bg.gif);
+}
+
+body{
+	/*font-family: KlavikaBasicLightRegular;*/
+        font-family: 'Raleway', sans-serif;
+	font-size:12pt;
+	color:#262626;
+}
+
+a{
+	outline: none;
+	text-decoration: none;
+	color:#FF7E00;
+        
+}
+
+.unreset-css p{
+	line-height: 18px;
+}
+
+.unreset-css p a:hover{
+	text-decoration: underline;
+}
+
+/* HEADERS */
+
+.project-info h1{
+	background-color: #A09E98;
+	padding:10px 45px 10px 20px;
+	color:#262626;
+        font-family: 'KlavikaBasicMediumRegular';
+	font-size:30px;
+}
+
+h1.page-title{
+        position: absolute;
+	top: -130px;
+	right: 60px;
+        font-family: 'KlavikaBasicMediumRegular';
+        font-size: 60px;
+       
+}
+
+.homepage h1{
+	position: absolute;
+	left:205px;
+	font-family: KlavikaBasicBoldRegular;
+	font-size:75px;
+	top:16px;
+	padding-right:40px;
+	width:530px;
+}
+
+.homepage h2{
+	position: absolute;
+	left:205px;
+	top:92px;
+	font-family: KlavikaBasicRegularRegular;
+	font-size:65px;
+	width:600px;
+}
+
+h1.titulo-pagina{
+    position: absolute;
+    top:-130px;
+    right:30px;
+    font-size:50px;
+    margin-bottom:25px;
+    font-style: italic;
+    /*letter-spacing: -2px; */
+    text-transform: capitalize;
+
+}
+
+h2.titulo-proyecto{
+    font-size:40px;
+    margin-bottom:25px;
+    position: relative;
+    top: -100px;
+    left: 70%;
+    font-style: italic;
+    /*letter-spacing: -2px; */
+    text-transform: capitalize;
+
+}
+
+.sub-page h2{
+	font-family: KlavikaBasicMediumRegular;
+	font-size:40px;
+	margin-bottom:25px;
+	position: relative;
+	/*letter-spacing: -2px; */
+}
+
+.project-list h2{
+	font-family: KlavikaBasicRegularRegular;
+	font-size:21px;
+	margin-top:10px;
+	margin-bottom:3px;
+}
+
+.contact-info h2{
+    font-family: 'KlavikaBasicMediumRegular';
+    font-size:30px;
+    background: #B7B5AF;
+    padding:10px 20px;
+}
+
+h2.entry-title{
+    font-family: 'KlavikaBasicMediumRegular';
+    font-size:17px;
+    margin-bottom:18px;
+}
+
+.aanpak-block h3{
+	font-family: KlavikaBasicMediumItalicRg;
+	font-size:60px;
+	margin-bottom:7px;
+}
+
+h4{
+    font-family: 'KlavikaBasicRegularItalicRg';
+    font-size:16px;
+}
+
+/* CLASSES */
+
+
+#content {
+    z-index: 100;
+    position: absolute;
+    margin: 0 auto;
+    text-align:left;
+    padding: 20px;
+    top: 146px;
+    left: -130px;
+}
+
+#page-header{
+    height:140px;
+    position: absolute;
+    top: 0px;
+}
+
+.logo{
+	position: fixed;
+	left:45px;
+	top:20px;
+	z-index:1000;
+}
+
+.contact-info{
+	position: absolute;
+	left:205px;
+	width:300px;
+	
+}
+
+.contact-info-text{
+	padding:20px;
+	background: #E5E5E5;
+}
+
+.topnav{
+	position: relative;
+	left:40%;
+	top:0px;
+        width: 100%;
+}
+
+.topnav ul{
+    margin: 20px 0px 0px 0px;
+    padding: 0;
+    
+}
+
+.topnav li{
+        float: left;
+	margin-right:10px;
+        margin-left: 10px;
+	font-family: KlavikaBasicLightRegular;
+	font-size:12px;
+        list-style-type: none;
+        
+}
+
+.topnav a{
+	color:#262626;
+	text-decoration: none;
+        padding: 0;
+        margin: 0;
+        
+}
+
+.topnav a span.icon{
+	padding-bottom:8px;
+	margin-bottom:12px;
+}
+
+/*.no-handheld .topnav a:hover span.icon{
+	border-bottom:5px solid #FF7E00;
+	margin-bottom:7px;
+}*/
+
+.topnav .link-text{
+	visibility: hidden;
+	position: absolute;
+}
+
+/*.no-handheld .topnav a:hover .link-text{
+	visibility: visible;
+}*/
+
+.slogan{
+	position: absolute;
+	left:205px;
+	top:186px;
+	width: 360px;
+	font-family: KlavikaBasicRegularItalicRg;
+	font-size: 18px;
+	line-height: 30px;
+}
+
+.underscore{
+	display: block;
+	width:32px;
+	height:7px;
+	background-color: #ff8100;
+	position: absolute;
+	right:0;
+	bottom:10px;
+}
+
+.underscore-richpolis{
+   width:13px;
+   height:3px;
+   background-color: #ff8100;
+   margin-bottom:10px;
+   
+}
+
+.underscore-small{
+	width:13px;
+	height:3px;
+	background-color: #ff8100;
+	margin-bottom:-3px;
+}
+
+.underscore-extrasmall{
+	width:9px;
+	height:2px;
+	background-color: #ff8100;
+	margin-bottom:-2px;
+	margin-left:2px;
+}
+
+.underscore-medium{
+	width:22px;
+	height:5px;
+	background-color: #ff8100;
+	margin-bottom:-5px;
+	margin-left:5px;
+}
+.padding-column{
+	padding-left:305px;
+        width: 908px;
+}
+.over-padding-column{
+	width:205px;
+	position: fixed;
+	top:140px;
+	left:40px;
+}
+
+.handheld .over-padding-column{
+	position: absolute;
+	top:0;
+}
+
+.column{
+	float: left;
+	position: relative;
+}
+
+.column-small{
+	width:205px;
+}
+.column-wide{
+	width:620px;
+}
+.column-medium{
+	margin-left:20px;
+	width:300px;
+}
+.column-master{
+	width:940px;
+}
+.column-right{
+	width:514px;
+}
+
+.sidenav{
+	text-align: right;
+	padding:40px 80px 20px 20px;
+	z-index:1000;
+	position: relative;
+}
+
+.sidenav li{
+	margin-bottom:8px;
+}
+
+.sidenav a{
+	text-transform: lowercase;
+	color: #262626;
+}
+
+.sidenav a:hover{
+	color: #ff8100;
+}
+
+.sidenav .active-link a, .sidenav .active a{
+	color: #ff8100;
+	font-style: italic;
+}
+
+.sub-page{
+	margin-bottom: 150px;
+	min-width:940px;
+	padding-right:20px;
+}
+
+.aanpak-block{
+	margin-bottom:40px;
+}
+
+.aanpak-block p{
+	width:380px;
+}
+
+.project-list li{
+	display: none;
+	float: left;
+	width:220px;
+	height:295px;
+	margin-left:20px;
+}
+
+.project-list{
+	margin-left:-20px;
+	width:100%;
+	zoom:1;
+}
+
+.project-list ul{
+	width:100%;
+	zoom:1;
+}
+
+.project-list li.active-block{
+	display: block;
+}
+
+article.hentry{
+	width:800px;
+	padding-bottom:30px;
+	margin-bottom:25px;
+	border-bottom:2px solid #a09e98;
+}
+
+article time{
+	font-size:48px;
+    font-family: 'KlavikaBasicBoldItalicRegular';
+}
+
+article .column-left{
+	background-color: #A09E98;
+	padding:14px;
+	margin-right:25px;
+	width:233px;
+	padding-bottom:126px;
+	min-height:157px;
+}
+
+.entry-content .unreset-css p{
+	font-size:12px;
+	line-height:16px;
+}
+
+.entry-content a{
+	color:#ccc;
+}
+
+.article-counter{
+	position: absolute;
+	bottom:-14px;
+	left:14px;
+	color:#AAA9A5;
+    font-family: 'KlavikaBasicBoldRegular';
+    font-size:129px;
+}
+
+aside{
+	margin-left:20px;
+	float: left;
+	width:140px;
+	font-size:11px;
+	padding-top:60px;
+}
+
+.aside-item{
+	padding-top:18px;
+	margin-bottom:18px;
+	border-top:2px solid #a09e98;
+}
+
+.aside-item:first-child{
+	padding-top:0;
+	border-top:0;
+}
+
+aside .unreset-css p{
+	line-height:13px;
+	color:#717171;
+}
+
+#map_frame{
+	width: 100%;
+	height:100%;
+	position: absolute;
+	left:0;
+	top:0;
+	overflow: hidden;
+}
+
+#map_canvas{
+	margin-left:-10%;
+	margin-top:-10%;
+	width:120%;
+	height:120%;
+}
+
+.project-info{
+	position: fixed;
+	bottom:0px;
+	right:113px;
+	width:300px;
+	padding-bottom:20px;
+	background-color:#E5E5E5;
+}
+
+.project-info-content{
+	padding:20px 20px 0 20px;
+	overflow: hidden;
+	position: relative;
+	height:36px;
+}
+
+.project-info-inner{
+}
+
+.prev-slide, .next-slide{
+	position: fixed;
+	top:50%;
+	margin-top:-10px;
+	padding:10px;
+	z-index: 1000;
+}
+.prev-slide{
+	left:5px;
+}
+.sprite-slide-left:hover{
+	background-position: 10px -341px;	
+}
+.next-slide{
+	right:5px;
+}
+.sprite-slide-right:hover{
+	background-position: 10px -481px;
+}
+.previous-post-link, .next-post-link{
+	display: none;
+}
+.next-slide.next-project{
+	background-position: 10px -271px; width: 34px; height: 20px;
+}
+.next-slide.next-project:hover{
+	background-position: 10px -201px;
+}
+.prev-slide.prev-project{
+	background-position: 10px -131px; width: 34px; height: 20px;
+}
+.prev-slide.prev-project:hover{
+	background-position: 10px -61px;
+}
+
+
+.sprite-info{
+	position: absolute;
+	right:20px;
+	top:18px;
+}
+
+.project-navigation{
+	position: absolute;
+	right:113px;
+	top:-24px;
+}
+
+.project-navigation li{
+	display: block;
+	width:10px;
+	height:10px;
+	font-size: 0;
+	line-height: 0;
+	margin-left:5px;
+	background: #A09E98;
+	float: left;
+	cursor: pointer;
+}
+
+.project-navigation li.loaded{
+	background: #262626;
+}
+
+.project-navigation li.active, .project-navigation li.hover{
+	background: #FF7E00;
+}
+
+.dash{
+    font-family: 'KlavikaBasicBoldRegular';
+    font-size: 14px;
+    line-height:18px;
+}
+
+.qtrans_language_chooser{
+	position: absolute;
+	right:30px;
+	top:5px;
+	z-index: 1000;
+}
+
+.qtrans_language_chooser li{
+	display: inline;	
+}
+
+.qtrans_language_chooser li:first-child span{
+	display: none;
+}
+
+.qtrans_language_chooser a, .qtrans_language_chooser span{
+	font-size:10px;
+    font-family: 'KlavikaBasicRegularRegular';
+    color:#262626;
+}
+
+.qtrans_language_chooser a:hover, .qtrans_language_chooser .active a{
+    color:#FF7E00;
+}
+
+#loading{
+	display: block;
+	width:40px;
+	height:40px;
+	background: url(/images/loader.gif);
+	position: fixed;
+	right:10px;
+	bottom:10px;
+}
+
+.visit-website{
+	font-size:14px;
+    font-family: 'KlavikaBasicLightItalicRg';
+    color:#262626;
+    line-height:30px;
+    text-align: left;
+}
+
+.visit-website:hover{
+	color:#FF7E00;
+}
+
+.paginate li{
+	float: left;
+	margin-right:5px;
+}
+
+.thumb-overlay{
+	width:100%;
+	height:100%;
+	position: absolute;
+	left:0;
+	top:0;
+	background: url(/images/white-20.png);
+	display: block;
+}
+
+
+.copyright{
+	position: fixed;
+	right:50px;
+	bottom:10px;
+        font-family: 'KlavikaBasicLightRegular';
+        font-size:11px;
+}
+
+.development-phrenesis{
+    position: fixed;
+    right:50px;
+    bottom:30px;
+    font-family: 'KlavikaBasicLightRegular';
+    font-size:11px;
+}
+
+/* SPRITE */
+
+.page-nosotros span.icon{ background: url(/images/menu/images/1.png); width: 57px; height: 62px; } 
+.page-servicios span.icon{ background: url(/images/menu/images/2.png); width: 57px; height: 62px; } 
+.page-portafolio span.icon{ background: url(/images/menu/images/3.png); width: 57px; height: 62px; } 
+.page-clientes span.icon{ background: url(/images/menu/images/4.png); width: 57px; height: 62px; } 
+.page-noticias span.icon{ background: url(/images/menu/images/5.png); width: 57px; height: 62px; } 
+.page-contacto span.icon{ background: url(/images/menu/images/6.png); width: 57px; height: 62px; } 
+
+
+.page-nosotros:hover span.icon{ background: url(/images/menu/images/1-over.png) no-repeat; width: 57px; height: 62px; } 
+.page-servicios:hover span.icon{ background: url(/images/menu/images/2-over.png) no-repeat; width: 57px; height: 62px; } 
+.page-portafolio:hover span.icon{ background: url(/images/menu/images/3-over.png) no-repeat; width: 57px; height: 62px; } 
+.page-clientes:hover span.icon{ background: url(/images/menu/images/4-over.png) no-repeat; width: 57px; height: 62px; } 
+.page-noticias:hover span.icon{ background: url(/images/menu/images/5-over.png) no-repeat; width: 57px; height: 62px; } 
+.page-contacto:hover span.icon{ background: url(/images/menu/images/6-over.png) no-repeat; width: 57px; height: 62px; } 
+
+
+.topnav span.icon{
+	 /*background: url(images/sprite.png) no-repeat top left;*/
+	 display: block;
+         background-repeat: no-repeat;
+
+}
+
+
+.sprite-project{
+	 background: url(images/sprite-project2.png) no-repeat top left;
+	 display: block;
+}
+
+.sprite-info{ background-position: 0 0; width: 21px; height: 21px; } 
+.sprite-project-left-hover{ background-position: 0 -71px; width: 34px; height: 20px; } 
+.sprite-project-left{ background-position: 0 -141px; width: 34px; height: 20px; } 
+.sprite-project-right-hover{ background-position: 0 -211px; width: 34px; height: 20px; } 
+.sprite-project-right{ background-position: 0 -281px; width: 34px; height: 20px; } 
+.sprite-slide-left-hover{ background-position: 0 -351px; width: 18px; height: 20px; } 
+.sprite-slide-left{ background-position: 10px -411px; width: 18px; height: 20px; } 
+.sprite-slide-right-hover{ background-position: 0 -491px; width: 18px; height: 20px; } 
+.sprite-slide-right{ background-position: 10px -551px; width: 18px; height: 20px; } 
+
+/* HELPERS */
+
+.image-container{
+	line-height: 0;
+	font-size: 0;
+	border:0;
+	position: relative;
+}
+
+.image-container:first-child{
+	margin-top:0;
+}
+
+.i50p{
+	width:50%;
+}
+
+.relative{
+	position: relative;
+}
+
+.absolute{
+	position: absolute;
+}
+
+.left{
+ float:left;
+}
+
+.right{
+ float:right;
+}
+
+.align-left{
+ text-align:left;
+}
+
+.align-center{
+ text-align:center;
+}
+
+.align-right{
+ text-align:right;
+}
+
+.inline{
+	display: inline;
+}
+
+.block{
+ display: block;
+}
+
+.inline-block{
+	display: inline-block;
+	zoom: 1;
+ 	*display:inline;
+}
+
+.zero-opacity{
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: Alpha(opacity=0);
+	opacity: 0;
+}
+
+.clear:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clear {
+	display: inline-block;
+}
+ 
+html[xmlns] .clear {
+	display: block;
+}
+ 
+* html .clear {
+	height: 1%;
+}
+
+.no-overflow{
+ overflow:hidden;
+}
+
+#ventana-publicacion{
+    position: absolute;
+    top: 0px;
+    right: -300px;
+    background: url(../images/portafolio/acercadelproyecto_box.png);
+    width: 300px;
+    height: 391px;
+    z-index: 1000;
+    text-align: justify;
+}
+#pestana-publicacion{
+    position: absolute;
+    left: -42px;
+    top: -10px;
+    background: url(../images/portafolio/acercadelproyecto_btn.png) no-repeat;
+    cursor: pointer;
+}
+
+.contenedor-publicacion{
+    overflow: auto;
+    width: 280px;
+    height: 361px;
+    padding-right: 10px;
+}
+
+.redes-sociales-publicacion{
+    float: left; 
+    margin-right: 20px; 
+    width: 300px;
+}
+
+.redes-sociales-publicacion ul{
+    padding: 0;
+    margin: 0;
+}
+.redes-sociales-publicacion ul li{
+    list-style-type: none;
+    display: inline;
+    padding-right: 5px;
+    float: left;
+}
+
+.thumbnail {
+    float: left;
+    margin: 3px;
+    border: 2px solid white;
+}

@@ -1,0 +1,168 @@
+clientes:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Clientes
+    module:               clientes
+    prefix_path:          /clientes
+    column:               id
+    with_wildcard_routes: true
+
+paginas:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Paginas
+    module:               paginas
+    prefix_path:          /paginas
+    column:               id
+    with_wildcard_routes: true
+
+proyectos_galeria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                ProyectosGaleria
+    module:               gproyectos
+    prefix_path:          /proyecto/galeria
+    column:               id
+    with_wildcard_routes: true
+
+proyectos:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Proyectos
+    module:               proyectos
+    prefix_path:          /proyecto
+    column:               id
+    with_wildcard_routes: true
+
+categorias_proyectos:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CategoriasProyectos
+    module:               catproyectos
+    prefix_path:          /categorias/proyecto
+    column:               id
+    with_wildcard_routes: true
+
+configuracion:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Configuracion
+    module:               configuracion
+    prefix_path:          /configuracion
+    column:               id
+    with_wildcard_routes: true
+
+publicaciones_galeria:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                PublicacionesGaleria
+    module:               gpublicaciones
+    prefix_path:          /publicaciones/galeria
+    column:               id
+    with_wildcard_routes: true
+
+publicaciones:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Publicaciones
+    module:               publicaciones
+    prefix_path:          /publicaciones
+    column:               id
+    with_wildcard_routes: true
+
+categorias_publicaciones:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                CategoriasPublicaciones
+    module:               categorias
+    prefix_path:          /categorias/publicaciones
+    column:               id
+    with_wildcard_routes: true
+
+proyectos_ajax_registro_delete:
+  url:     /proyectos/ajax/:id/delete
+  class:   sfDoctrineRoute
+  options: { model: Proyectos, type: object }
+  param:   { module: catproyectos, action: ajaxRegistroDelete }
+  requirements:
+    sf_method: [post]
+
+proyectos_galeria_ajax_registro_liste:
+  url:     /proyectos/galeria/ajax/:id/list
+  class:   sfDoctrineRoute
+  options: { model: Proyectos, type: object }
+  param:   { module: proyectos, action: ajaxRegistrosLista }
+  requirements:
+    sf_method: [post]
+
+proyectos_galeria_upload:
+  url:     /proyectos/galeria/ajax/upload
+  param:   { module: proyectos, action: upload}
+  
+proyectos_galeria_ajax_registro_delete:
+  url:     /proyectos/galeria/ajax/:id/delete
+  class:   sfDoctrineRoute
+  options: { model: ProyectosGaleria, type: object }
+  param:   { module: proyectos, action: ajaxRegistroDelete }
+  requirements:
+    sf_method: [post]
+
+
+publicaciones_ajax_registro_delete:
+  url:     /publicaciones/ajax/:id/delete
+  class:   sfDoctrineRoute
+  options: { model: Publicaciones, type: object }
+  param:   { module: categorias, action: ajaxRegistroDelete }
+  requirements:
+    sf_method: [post]
+
+publicaciones_galeria_ajax_registro_liste:
+  url:     /publicaciones/galeria/ajax/:id/list
+  class:   sfDoctrineRoute
+  options: { model: Publicaciones, type: object }
+  param:   { module: publicaciones, action: ajaxRegistrosLista }
+  requirements:
+    sf_method: [post]
+
+publicaciones_galeria_upload:
+  url:     /publicaciones/galeria/ajax/upload
+  param:   { module: publicaciones, action: upload}
+
+publicaciones_galeria_ajax_registro_delete:
+  url:     /publicaciones/galeria/ajax/:id/delete
+  class:   sfDoctrineRoute
+  options: { model: PublicacionesGaleria, type: object }
+  param:   { module: publicaciones, action: ajaxRegistroDelete }
+  requirements:
+    sf_method: [post]
+
+   
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/10-Routing
+
+sf_guard_signin:
+  url:   /login
+  param: { module: sfGuardAuth, action: signin }
+        
+sf_guard_signout:
+  url:   /logout
+  param: { module: sfGuardAuth, action: signout }
+        
+sf_guard_password:
+  url:   /request_password
+  param: { module: sfGuardAuth, action: password }
+
+
+# default rules
+homepage:
+  url:   /
+  param: { module: sfAdminDash, action: dashboard }
+
+# generic rules
+# please, remove them by adding more specific rules
+default_index:
+  url:   /:module
+  param: { action: index }
+
+default:
+  url:   /:module/:action/*

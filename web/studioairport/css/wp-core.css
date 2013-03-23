@@ -1,0 +1,121 @@
+/* =WordPress Core
+-------------------------------------------------------------- */
+.aligncenter, div.aligncenter {
+    display:block;
+    margin: 10px auto 10px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 10px 0 10px 10px;
+}
+
+.alignleft {
+    float:left;
+    margin: 10px 10px 10px 0;
+}
+
+.aligncenter {
+    display: block;
+    margin: 10px auto 10px auto;
+}
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 10px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 10px 10px 10px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 10px 10px 10px 0;
+}
+
+.wp-caption.alignright {
+    margin: 10px 0 10px 10px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin:0;
+    max-width: 98.5%;
+    padding:0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size:11px;
+    line-height:17px;
+    margin:0;
+    padding:0 4px 5px;
+}
+
+/* FORMS */
+
+.unreset-css address,
+.unreset-css blockquote,
+.unreset-css dd, .unreset-css div,
+.unreset-css dl, .unreset-css dt, .unreset-css fieldset, .unreset-css form,
+.unreset-css frame, .unreset-css frameset,
+.unreset-css h1, .unreset-css h2, .unreset-css h3, .unreset-css h4,
+.unreset-css h5, .unreset-css h6, .unreset-css noframes,
+.unreset-css ol, .unreset-css p, .unreset-css ul, .unreset-css center,
+.unreset-css dir, .unreset-css hr, .unreset-css menu, .unreset-css pre { display: block }
+.unreset-css li { display: list-item; }
+.unreset-css head { display: none }
+.unreset-css table { display: table }
+.unreset-css tr { display: table-row }
+.unreset-css thead { display: table-header-group }
+.unreset-css tbody { display: table-row-group }
+.unreset-css tfoot { display: table-footer-group }
+.unreset-css col { display: table-column }
+.unreset-css colgroup { display: table-column-group }
+.unreset-css td, .unreset-css th { display: table-cell }
+.unreset-css caption { display: table-caption }
+.unreset-css th { font-weight: bolder; text-align: center }
+.unreset-css caption { text-align: center }
+.unreset-css body { margin: 8px }
+.unreset-css p,
+.unreset-css blockquote, .unreset-css ul,
+.unreset-css fieldset, .unreset-css form,
+.unreset-css ol, .unreset-css dl, .unreset-css dir,
+.unreset-css menu { margin: 1.12em 0 }
+.unreset-css p:first-child{ margin-top:0; }
+.unreset-css p:last-child{ margin-bottom:0; }
+
+.unreset-css h5 { margin: 1.5em 0 }
+.unreset-css h6 { margin: 1.67em 0 }
+.unreset-css b,
+.unreset-css strong { font-weight: bolder }
+.unreset-css blockquote { margin-left: 40px; margin-right: 40px }
+.unreset-css i, .unreset-css cite, .unreset-css em,
+.unreset-css var, .unreset-css address { font-style: italic }
+.unreset-css pre, .unreset-css tt, .unreset-css code,
+.unreset-css kbd, .unreset-css samp { font-family: monospace }
+.unreset-css pre { white-space: pre }
+.unreset-css button, .unreset-css textarea,
+.unreset-css input, .unreset-css select { display: inline-block }
+.unreset-css big { font-size: 1.17em }
+.unreset-css small, .unreset-css sub, .unreset-css sup { font-size: .83em }
+.unreset-css sub { vertical-align: sub }
+.unreset-css sup { vertical-align: super }
+.unreset-css table { border-spacing: 2px; }
+.unreset-css thead, .unreset-css tbody,
+.unreset-css tfoot { vertical-align: middle }
+.unreset-css td, .unreset-css th, .unreset-css tr { vertical-align: inherit }
+.unreset-css s, .unreset-css strike, .unreset-css del { text-decoration: line-through }
+.unreset-css hr { border: 1px inset }
+.unreset-css ol, .unreset-css ul, .unreset-css dir,
+.unreset-css menu, .unreset-css dd { margin-left: 40px }
+.unreset-css ol, .unreset-css ol li { list-style: decimal }
+.unreset-css ol ul, .unreset-css ul ol,
+.unreset-css ul ul, .unreset-css ol ol { margin-top: 0; margin-bottom: 0 }
+.unreset-css ul, .unreset-css ul li { list-style: disc }
+.unreset-css u, .unreset-css ins { text-decoration: underline }
+.unreset-css br:before { content: "\A"; white-space: pre-line }
+.unreset-css center { text-align: center }

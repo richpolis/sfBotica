@@ -1,0 +1,123 @@
+Configuracion:
+  actAs: 
+    Timestampable: true
+    Sluggable:
+      fields: [seccion]
+      unique: true
+  columns:
+    seccion: { type: string(255), notnull: true }
+    value: { type: string(100), notnull: true }
+    imagen: { type: string(255), notnull: true }
+    
+Paginas:
+  actAs: 
+    Timestampable: true
+    Sluggable:
+      fields: [pagina]
+      unique: true
+  columns:
+    pagina: { type: string(100), notnull: true }
+    contenido: { type: text, notnull: true }
+    imagen: { type: string(255), notnull: true }
+    fondo: { type: string(255), notnull: true }
+
+Clientes:
+  actAs: 
+    Timestampable: true
+    Sortable: true
+    Sluggable:
+      fields: [cliente]
+      unique: true
+      canUpdate: true
+  columns:
+    cliente: { type: string(255), notnull: true }
+    imagen: { type: string(255), notnull: true }
+    is_active: { type: boolean, notnull: false, default: true }
+    position: {type: integer(4)}
+
+
+CategoriasPublicaciones:
+  actAs: 
+    Timestampable: true
+    Sortable: true
+    Sluggable:
+      fields: [categoria]
+      unique: true
+      canUpdate: true
+  columns:
+    categoria: { type: string(255), notnull: true }
+    slug: { type: string(255), notnull: true }
+    is_active: { type: boolean, notnull: false, default: false }
+
+Publicaciones:
+  actAs: 
+    Timestampable: true
+    Sluggable:
+      fields: [titulo]
+      unique: true
+      canUpdate: true
+  columns:
+    categoria_id: { type: integer }
+    titulo: { type: string(255), notnull: true }
+    contenido: { type: text, notnull: true }
+    descripcion_corta: { type: text, notnull: true }
+    is_active: { type: boolean, notnull: false, default: false }
+    thumbnail: { type: string(255), notnull: true, default: 'sin_imagen.jpg' }
+    position: {type: integer(4)}
+  relations:
+    CategoriasPublicaciones: { local: categoria_id, foreign: id, onDelete: cascade }
+
+PublicacionesGaleria:
+  columns:
+    publicacion_id: { type: integer }
+    titulo: { type: string(255), notnull: false, default: '' }
+    contenido: { type: text, notnull: false, default: '' }
+    tipo_archivo: { type: string(255), notnull: false, default: 1 }
+    archivo: { type: string(255), notnull: true }
+    thumbnail: { type: string(255), notnull: true, default: 'sin_imagen.jpg' }
+    position: {type: integer(4)}
+  relations:
+    Publicaciones: { local: publicacion_id, foreign: id, onDelete: cascade, foreignAlias: PublicacionesGaleria }
+
+CategoriasProyectos:
+  actAs: 
+    Timestampable: true
+    Sortable: true
+    Sluggable:
+      fields: [categoria]
+      unique: true
+      canUpdate: true
+  columns:
+    categoria: { type: string(255), notnull: true }
+    slug: { type: string(255), notnull: true }
+    is_active: { type: boolean, notnull: false, default: false }
+
+Proyectos:
+  actAs: 
+    Timestampable: true
+    Sluggable:
+      fields: [titulo]
+      unique: true
+      canUpdate: true
+  columns:
+    categoria_id: { type: integer }
+    titulo: { type: string(255), notnull: true }
+    contenido: { type: text, notnull: true }
+    descripcion_corta: { type: text, notnull: true }
+    is_active: { type: boolean, notnull: false, default: false }
+    thumbnail: { type: string(255), notnull: true, default: 'sin_imagen.jpg' }
+    position: {type: integer(4)}
+  relations:
+    CategoriasProyectos: { local: categoria_id, foreign: id, onDelete: cascade }
+
+ProyectosGaleria:
+  columns:
+    publicacion_id: { type: integer }
+    titulo: { type: string(255), notnull: false, default: '' }
+    contenido: { type: text, notnull: false, default: '' }
+    tipo_archivo: { type: string(255), notnull: false, default: 1 }
+    archivo: { type: string(255), notnull: true }
+    thumbnail: { type: string(255), notnull: true, default: 'sin_imagen.jpg' }
+    position: {type: integer(4)}
+  relations:
+    Proyectos: { local: publicacion_id, foreign: id, onDelete: cascade, foreignAlias: ProyectosGaleria }

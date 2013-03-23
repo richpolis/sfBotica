@@ -1,0 +1,43 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Proyectos
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          proyectos
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:
+        categoria_id: {label: Categoria }
+        categorias_proyectos: {label: Categoria }
+        position: {label: Orden }
+        titulo: {label: Titulo }
+        is_active: {label: Activa, help: 'Para desactivar o activar publicacion'}
+      list:
+        title: Proyectos
+        display: [categorias_proyectos,position,titulo,is_active]
+        sort: [position, asc]
+        object_actions:
+          _edit: {label: Editar }
+          _delete: {label: Eliminar }
+        table_method: retrieveBackendCategoriasList
+      filter:  ~
+      form: 
+        actions:
+          _list: {label: Regresar a Lista}
+          _save: {label: Guardar }
+      edit:
+        title:            Modificar proyecto "%%titulo%%"
+        display:
+          "Galeria":      [_photoUpload]
+          "Proyecto":  [categoria_id,titulo,contenido,is_active]
+      new:
+        title:            Crear proyecto
+        display:
+          "Proyecto":   [categoria_id,titulo,contenido,is_active]

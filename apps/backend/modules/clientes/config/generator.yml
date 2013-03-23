@@ -1,0 +1,45 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Clientes
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          clientes
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        cliente: {label: Cliente }
+        is_active: {label: 'Activo?',help: 'Activar o inactivar registro'}
+        position: {label: Orden }
+        imagen: { label: Imagen }
+        created_at: { label: Creado, date_format: 'dd/MM/y' }
+      list:    
+        title: Clientes
+        sort: [position, asc]
+        display: [position,cliente, _imagen ,created_at]
+        object_actions:
+          Arriba:
+            action: promote
+          Abajo:
+            action: demote
+          _edit:    {label: Editar }
+          _delete:  {label: Eliminar }
+        actions: 
+          _new:    { label: Nuevo cliente }
+        batch_actions: {}
+        table_method: getClientesList
+      filter:  {}
+      form: 
+        actions:
+          _list: {label: Regresar a Lista }
+          _save: {label: Guardar }
+      edit:    
+        title: Editar cliente %%cliente%%
+      new:     
+        title: Nuevo cliente

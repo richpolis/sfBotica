@@ -1,0 +1,16 @@
+sfGuardUser:
+  User_admin:
+    first_name:     Richpolis
+    last_name:      Systems
+    email_address:  richpolis@gmail.com
+    username:       Richpolis
+    password:       R1chp0l1s
+    is_super_admin: true
+  user_admin:
+    first_name:     Admin
+    last_name:      System
+    email_address:  contact@botica.com
+    username:       admin
+    password:       admin1234
+    is_super_admin: false
+    

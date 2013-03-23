@@ -1,0 +1,39 @@
+generator:
+  class: sfDoctrineGenerator
+  param:
+    model_class:           Paginas
+    theme:                 admin
+    non_verbose_templates: true
+    with_show:             false
+    singular:              ~
+    plural:                ~
+    route_prefix:          paginas
+    with_doctrine_route:   true
+    actions_base_class:    sfActions
+
+    config:
+      actions: ~
+      fields:  
+        pagina: {label: Pagina }
+        contenido: {label: Contenido }
+        imagen: { label: Imagen }
+        fondo: { label: Fondo }
+        created_at: { label: Creado, date_format: 'dd/MM/y' }
+      list:    
+        title: Opciones de paginas
+        sort: [pagina, asc]
+        display: [id,pagina, _contenido,_fondo_miniatura,created_at]
+        object_actions:
+          _edit: {label: Editar}
+        actions: 
+          _new:    { label: Nueva pagina }
+        batch_actions: {}  
+      filter:  {}
+      form: 
+        actions:
+          _list: {label: Regresar a Lista}
+          _save: {label: Guardar }
+      edit:    
+        title: Editar pagina %%pagina%%
+      new:     
+        title: Nueva pagina
