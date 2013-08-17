@@ -145,7 +145,7 @@
                         <?php foreach( $list_registros as $i=>$registro ): ?>
                            
                             <li id="registro-<?php echo $registro->getId()?>" class="ui-widget-content ui-corner-tr picture">
-                                    <h5 class="ui-widget-header" <?php if($registro->getIsActive()):?> style=" background-color: maroon;"<?php endif;?>>
+                                    <h5 class="ui-widget-header titulo-galeria" <?php if($registro->getIsActive()):?> style=" background-color: maroon;"<?php endif;?>>
                                     <?php echo ($registro->getTitulo()==""?"Sin Titulo":$registro->getTituloCortoBackend(13)); ?></h5>
                                     <div id="image_<?php echo $registro->getId(); ?>">
                                     <img class="basic" src="<?php echo $registro->getThumbnailValid(); ?>"  title="<?php echo $registro->getTitulo(); ?>"/>

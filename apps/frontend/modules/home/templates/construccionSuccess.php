@@ -14,8 +14,21 @@
             <!--[if lt IE 9]>
                 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
              <![endif]-->
+             <style type="text/css"> 
+<!--
+#centrado {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+	margin-top: -176px;
+    margin-left: -122px;
+    width: 249px;
+    height: 352px;
+}
+-->
+</style>
 
-            <meta property="og:title" content="Pagina Botica.com" />
+             <meta property="og:title" content="Pagina Botica.com" />
             <meta property="og:type" content="album" />
             <meta property="og:url" content="Botica, notas, portafolio, proyectos" />
             <meta property="og:image" content="/images/logo.png" />
@@ -25,6 +38,12 @@
 
     </head>
     <body class="home page page-id-5 page-template-default no-handheld webkit webkit-5">
+    <div id="background"></div>    
+    <div id="centrado" style="font-size: 24pt;">
+                    <img  src="/images/muyprontoalaire.png"/>
+                    
+            </div>
+
         <span id="loadingin" style="display: none;"></span>
         <!--header id="page-header">
             <div class="logo">
@@ -80,12 +99,9 @@
 
                 </div>
             </div>
-            <div class="padding-column">
-                <p style="font-size: 24pt;">
-                    <img src="/images/muyprontoalaire.png"/>
-                    
-                </p>
-                
+            
+            <div class="padding-column" style="text-align:center;height: 400px;">
+                                
                 <p>
                     <a style="position: absolute; bottom: 0px; right: 0px;" href="<?php echo url_for("@inicio")?>">Entrar</a>
                 </p>
@@ -95,7 +111,7 @@
         <footer class="row copyright">
             <!--2013 &copy; All rights reserved, Botica-->
         </footer>
-        <div id="background"></div>
+        
         <script type="text/javascript" src="/js/jquery.min.js"></script>
         <script type="text/javascript" src="/js/jquery.smartBackgroundResize-1.0.js"></script>
 

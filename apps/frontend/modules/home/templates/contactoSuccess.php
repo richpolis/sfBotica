@@ -25,7 +25,7 @@
 <div class="padding-column">
         <div class="column column-medium">
             <?php if ($contenido->getImagen() == null): ?>
-                <div > 
+                <div class="unreset-css"> 
                     <?php echo $contenido->getContenido(ESC_RAW) ?>
                 </div>    
             <?php else: ?>

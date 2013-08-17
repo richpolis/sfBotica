@@ -81,4 +81,4 @@ construccion:
 
 homepage:
   url:   /
-  param: { module: home, action: construccion }
+  param: { module: home, action: index }

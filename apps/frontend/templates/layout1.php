@@ -27,6 +27,7 @@
         
     </head>
     <body class="home page page-id-5 page-template-default no-handheld webkit webkit-5">
+        <div id="background"></div>
         <span id="loadingin" style="display: none;"></span>
         <header id="page-header">
             <div class="logo">
@@ -81,7 +82,7 @@
         <footer class="row copyright">
             2013 &copy; All rights reserved, Botica
         </footer>
-        <div id="background"></div>
+        
         <?php include_javascripts() ?>
          
         <?php include_slot('background')?>

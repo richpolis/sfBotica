@@ -11,7 +11,7 @@ dev:
       persistent: true
 
 
-#phrenesis
+#interactivevalley.com
 #prod:
 #  doctrine:
 #    class: sfDoctrineDatabase
@@ -21,13 +21,13 @@ dev:
 #      password: ]H{c4pWMi*D@
 #      persistent: true
 
-#interactivevalley.com
-prod:
-  doctrine:
-    class: sfDoctrineDatabase
-    param:
-      dsn:      mysql:host=localhost;dbname=phrenesi_botica
-      username: phrenesi_rpsstms
-      password: D3m3s1s1
-      persistent: true
+#mediatemple.com
+#all:
+#  doctrine:
+#    class: sfDoctrineDatabase
+#    param:
+#      dsn:      mysql:host=internal-db.s164079.gridserver.com;dbname=db164079_botica
+#      username: db164079_botica
+#      password: d3m3s1s1
+#      persistent: true
       

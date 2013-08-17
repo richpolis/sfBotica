@@ -23,20 +23,10 @@ class Proyectos extends BaseProyectos
     
     public function getThumbnailValid(){
         $file=$this->getThumbnail();
-        if(file_exists(sfConfig::get('sf_upload_dir').'/publicaciones/thumbnails/'.$file) && strlen($file)>0){
-           return "http://".$_SERVER['HTTP_HOST'].'/uploads/publicaciones/thumbnails/'.$file;
-        }elseif(strlen($file)==0){
-           $registro_galeria=Doctrine_Core::getTable('PublicacionesGaleria')->getPrimerArchivoPorPublicacion($this->getId());
-           if(!$registro_galeria==null){
-              $registro_galeria->getThumbnailValid(); 
-              $this->setThumbnail($registro_galeria->getThumbnail());
-              parent::save();
-              $this->getThumbnailValid();
-           }else{
-              return "http://".$_SERVER['HTTP_HOST'].'/uploads/publicaciones/thumbnails/bg_negro.png'; 
-           }
+        if(file_exists(sfConfig::get('sf_upload_dir').'/publicaciones/'.$file)){
+           return "http://".$_SERVER['HTTP_HOST'].'/uploads/publicaciones/'.$file;
         }else{
-           return $this->getThumbnail();
+              return "http://".$_SERVER['HTTP_HOST'].'/uploads/publicaciones/thumbnails/bg_negro.png'; 
         } 
     }
     
@@ -75,12 +65,15 @@ EOF
     }
     
     public function save(Doctrine_Connection $conn = null) {
-        if(!$this->isNew()){
-            $registro_galeria=Doctrine_Core::getTable('ProyectosGaleria')->getPrimerArchivoPorPublicacion($this->getId());
-            if(!$registro_galeria==null){
-                $this->setThumbnail($registro_galeria->getThumbnail());
-            }
+        if($this->isModified())
+        {
+            $fileImagen = sfConfig::get('sf_upload_dir') . '/publicaciones/'.$this->getThumbnail();
+            $img = new sfImage($fileImagen,sfRichSys::getTipoMime($this->getThumbnail()));
+            $img->thumbnail(220,220,'center');
+            $img->save();
+
         }
+
         if(!$this->getPosition()){
             $this->setPosition(Doctrine_Core::getTable('Proyectos')->getMaximo());
         }

@@ -35,6 +35,7 @@ class publicacionesActions extends autoPublicacionesActions
                 unset($result["filename"],$result['original'],$result['titulo'],$result['contenido']);
                 if ($registro->save()) {
                     $ok = 'success';
+                    $this->publicacion->save();
                 }else{
                     $ok = "failed";
                 }

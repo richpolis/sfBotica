@@ -36,7 +36,7 @@
 
 <div class="over-padding-column">
     <nav class="sidenav" role="navigation">
-        <ul class="type-filter">
+        <ul class="type-filter links-negros">
             <li data-filter="all" class="show-all-link active"><a href="">Ver todos</a></li>
             <?php foreach ($categorias as $categoria): ?>
                 <li data-filter="<?php echo $categoria->getId() ?>" class="categoria-<?php echo $categoria->getId() ?>"><a href=""><?php echo $categoria->getCategoria(); ?></a></li>
@@ -45,7 +45,7 @@
     </nav>
 </div>
 <div class="padding-column">
-    <div class="project-list">
+    <div class="project-list" style="margin-top: 15px;">
         <ul style="height: <?php echo $filas * 295 ?>px;" class="masonry">
             <?php $contFilas = 0;
             $contColumnas = 0; ?>

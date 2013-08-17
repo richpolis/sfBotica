@@ -36,8 +36,8 @@ generator:
         title:            Modificar proyecto "%%titulo%%"
         display:
           "Galeria":      [_photoUpload]
-          "Proyecto":  [categoria_id,titulo,contenido,is_active]
+          "Proyecto":  [categoria_id,thumbnail,titulo,contenido,is_active]
       new:
         title:            Crear proyecto
         display:
-          "Proyecto":   [categoria_id,titulo,contenido,is_active]
+          "Proyecto":   [categoria_id,thumbnail,titulo,contenido,is_active]

@@ -11,12 +11,12 @@
 </script>
 <?php endif; ?>
 <?php end_slot(); ?>
-<div class="padding-column">
     <h1 class="page-title">
         <?php echo $contenido->getPagina()?>
     </h1>
+<div class="padding-column">
     <?php if ($contenido->getImagen() == null): ?>
-        <div class="span10" style="text-align: justify;"> 
+        <div class="unreset-css" style="text-align: justify;"> 
         <?php echo $contenido->getContenido(ESC_RAW) ?>
         </div>    
     <?php else: ?>

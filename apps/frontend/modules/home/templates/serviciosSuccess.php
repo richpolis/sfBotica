@@ -18,7 +18,7 @@
 
 <div class="padding-column">
     <?php if ($contenido->getImagen() == null): ?>
-        <div class="span10">
+        <div class="unreset-css">
         <?php echo $contenido->getContenido(ESC_RAW) ?>
         </div>    
     <?php else: ?>

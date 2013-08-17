@@ -77,8 +77,8 @@
     </nav>
 </div>
 
-<div class="padding-column row">
-    <div class="span9" style="overflow: hidden; height: 391px; position: relative; ">
+<div class="padding-column left">
+    <div class="span9" style="overflow: hidden; height: 391px; position: relative; top: 15px; width: 850px;">
         <table>
             <tr>
                 <td>
