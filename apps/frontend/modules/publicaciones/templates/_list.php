@@ -2,7 +2,13 @@
 <div class="hfeed">
 <?php foreach ($list_registros as $registro): ?>
     <article class="post-<?php echo $registro->getId() ?> post type-post status-publish format-standard hentry category-nieuws">
-        <time class="updated published" datetime="<?php echo $registro->getCreatedAt() ?>"><?php echo $registro->getDateTimeObject('created_at')->format('m.d.Y')  ?><span class="underscore-medium inline-block"></span></time>
+        <time class="updated published" datetime="<?php echo $registro->getCreatedAt() ?>">
+            <?php if(strlen($slug)==0):?>
+            <?php echo $registro->getCategoriasPublicaciones()->getCategoria();?>&nbsp;
+            <?php endif;?>
+            <?php echo $registro->getDateTimeObject('created_at')->format('m.d.Y')  ?>
+            <span class="underscore-medium inline-block"></span>
+        </time>
         <div class="clear" style="height:10px;"></div>
         <div class="column column-left">
             <h2 class="entry-title"><?php echo $registro->getTitulo() ?></h2>
@@ -38,8 +44,9 @@
         <div class="clear"></div>
     </article>
 <?php endforeach; ?>
-<?php include_partial('publicaciones/paginador', array(
+<?php /*include_partial('publicaciones/paginador', array(
     'pager' => $pager, 
-    'categoria_actual' => $categoria_actual
-    )); ?>
+    'categoria_actual' => $categoria_actual,
+    'slug'=>$slug
+    ));*/ ?>
 </div>  

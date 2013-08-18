@@ -1,0 +1,3 @@
+<td colspan="5">
+  <?php echo __('%%id%% - %%seccion%% - %%contenido%% - %%imagen%% - %%created_at%%', array('%%id%%' => link_to($configuracion->getId(), 'configuracion_edit', $configuracion), '%%seccion%%' => $configuracion->getSeccion(), '%%contenido%%' => get_partial('configuracion/contenido', array('type' => 'list', 'configuracion' => $configuracion)), '%%imagen%%' => get_partial('configuracion/imagen', array('type' => 'list', 'configuracion' => $configuracion)), '%%created_at%%' => false !== strtotime($configuracion->getCreatedAt()) ? format_date($configuracion->getCreatedAt(), "dd/MM/y") : '&nbsp;'), 'messages') ?>
+</td>

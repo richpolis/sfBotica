@@ -19,15 +19,18 @@ class publicacionesActions extends sfActions
   {
     $this->categorias = Doctrine_Core::getTable('CategoriasPublicaciones')->getCategoriasActivas();
     
+    $page=$request->getParameter('page', 1);
+    $this->slug=$request->getParameter('slug','');
+    
     if(count($this->categorias)>0){
         $this->categoria_actual=$this->categorias[0];
     }
-      
-    $q=Doctrine_Core::getTable('Publicaciones')->getCriteriaPorCategoria($this->categoria_actual->getId());   
     
-    $this->pager = new sfDoctrinePager('Publicaciones',6);
+    $q=Doctrine_Core::getTable('Publicaciones')->getCriteriaTodasLasCategorias();   
+    
+    $this->pager = new sfDoctrinePager('Publicaciones',2);
     $this->pager->setQuery($q);
-    $this->pager->setPage($request->getParameter('page', 1));
+    $this->pager->setPage($page);
     $this->pager->init();
     $this->list_registros=$this->pager->getResults();
     
@@ -35,12 +38,13 @@ class publicacionesActions extends sfActions
     
      if ($request->isXmlHttpRequest()){
        try{
-           return $this->renderPartial('publicaciones/list', array(
+           return $this->renderPartial('publicaciones/list_2', array(
                'pager' => $this->pager,
                'list_registros'=>$this->list_registros,
                'categoria_actual'=>$this->categoria_actual,
                'categorias'=>$this->categorias,
-               'tipos'=>$this->tipos
+               'tipos'=>$this->tipos,
+               'slug'=>$this->slug
             ));
        } catch(Exception $e){
            throw $e->getMessage();
@@ -54,15 +58,19 @@ class publicacionesActions extends sfActions
        $this->contenido->setContenido("Pagina de noticias");
     }
     
+    $this->total= $this->pager->getCountQuery()->count();
+    $this->pagina_url=$this->generateUrl('publicaciones');
       
   } 
     
     
   public function executeCategoria(sfWebRequest $request)
   {
+    $page=$request->getParameter('page', 1);
+    $this->slug=$request->getParameter('slug','');
     $this->categorias=Doctrine_Core::getTable('CategoriasPublicaciones')->getCategoriasActivas();
-    if($request->hasParameter('slug')){
-       $this->categoria=Doctrine_Core::getTable('CategoriasPublicaciones')->findBy('slug', $request->getParameter('slug'));
+    if(strlen($this->slug)>0){
+       $this->categoria=Doctrine_Core::getTable('CategoriasPublicaciones')->findBy('slug', $this->slug);
        $this->categoria_actual=$this->categoria[0];
     }else{
         if($this->categorias!=null){
@@ -74,9 +82,9 @@ class publicacionesActions extends sfActions
     $this->tipos = Doctrine_Core::getTable('PublicacionesGaleria')->getTiposArchivo();
     if($this->categoria_actual){
         $q=  Doctrine_Core::getTable('Publicaciones')->getCriteriaPorCategoria($this->categoria_actual->getId());   
-        $this->pager = new sfDoctrinePager('Publicaciones',6);
+        $this->pager = new sfDoctrinePager('Publicaciones',2);
         $this->pager->setQuery($q);
-        $this->pager->setPage($request->getParameter('page', 1));
+        $this->pager->setPage($page);
         $this->pager->init();
         $this->list_registros=$this->pager->getResults();
     }else{
@@ -86,10 +94,12 @@ class publicacionesActions extends sfActions
         
     if ($request->isXmlHttpRequest())
     {
-       return $this->renderPartial('publicaciones/list', array(
+       return $this->renderPartial('publicaciones/list_2', array(
            'pager' => $this->pager,
            'list_registros'=>$this->list_registros,
-           'categoria_actual'=>$this->categoria_actual
+           'categoria_actual'=>$this->categoria_actual,
+           'tipos'=>$this->tipos,
+           'slug'=>$this->slug
         ));
     }
     
@@ -99,6 +109,9 @@ class publicacionesActions extends sfActions
        $this->contenido->setPagina("Noticias");
        $this->contenido->setContenido("Pagina de noticias");
     }
+    
+    $this->total = $this->pager->getCountQuery()->count();
+    $this->pagina_url=$this->generateUrl("publicaciones_categoria",$this->categoria_actual);
     
   }
   public function executePublicacion(sfWebRequest $request)

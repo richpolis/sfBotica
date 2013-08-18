@@ -20,7 +20,7 @@ class PaginasForm extends BasePaginasForm
            'file_src'  => '/uploads/assets/'.$this->getObject()->getImagen(),
            'is_image'  => true,
            'edit_mode' => !$this->isNew(),
-           'template'  => '<div><img src="/uploads/assets/'.$this->getObject()->getImagen().'" style="max-heigth:200px"/><br /><label></label>%input%<br />%delete% %delete_label%<label></label></div>',
+           'template'  => '<div><img src="/uploads/assets/'.$this->getObject()->getImagen().'" style="max-width:200px;"/><br /><label></label>%input%<br />%delete% %delete_label%<label></label></div>',
       ));
 
 
@@ -30,12 +30,14 @@ class PaginasForm extends BasePaginasForm
            'path' => sfConfig::get('sf_upload_dir').'/assets'
       ));
       
+      $this->validatorSchema['imagen_delete'] = new sfValidatorBoolean();
+      
       $this->widgetSchema['fondo'] = new sfWidgetFormInputFileEditable(array(
            'label'     => 'Fondo de pagina',
            'file_src'  => '/uploads/assets/'.$this->getObject()->getFondo(),
            'is_image'  => true,
            'edit_mode' => !$this->isNew(),
-           'template'  => '<div><img src="/uploads/assets/'.$this->getObject()->getFondo().'" style="max-heigth:200px"/><br /><label></label>%input%<br />%delete% %delete_label%<label></label></div>',
+           'template'  => '<div><img src="/uploads/assets/'.$this->getObject()->getFondo().'" style="max-width:200px;"/><br /><label></label>%input%<br />%delete% %delete_label%<label></label></div>',
       ));
 
 
@@ -45,10 +47,13 @@ class PaginasForm extends BasePaginasForm
            'path' => sfConfig::get('sf_upload_dir').'/assets'
       ));
       
-      $this->widgetSchema['contenido'] = new sfWidgetFormTextareaTinyMCE(array(
+      $this->validatorSchema['fondo_delete'] = new sfValidatorBoolean();
+      
+      /*$this->widgetSchema['contenido'] = new sfWidgetFormTextareaTinyMCE(array(
                 'width' => 500,
                 'height' => 250,
-       ));
+       ));*/
+      $this->widgetSchema['contenido'] = new sfWidgetFormTextarea(array(), array('cols' => '60','rows'=>'8'));
      
   }
 }

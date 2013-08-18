@@ -70,6 +70,7 @@
 <div class="over-padding-column">
     <nav class="sidenav">
         <ul>
+            <li><a href="<?php echo url_for("publicaciones") ?>">Todas</a></li>
             <?php foreach($categorias as $categoria): ?>
             <?php if($categoria->getId()!=$categoria_actual->getId()): ?>
             <li><a href="<?php echo url_for("publicaciones_categoria", $categoria) ?>"><?php echo $categoria->getCategoria() ?></a></li>

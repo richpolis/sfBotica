@@ -18,10 +18,35 @@
 </script>
 <?php endif; ?>
 <script>
-    jQuery.showCategoryPage=function(urlCategoryPage){
+var pagina  =   1;
+var TotalPaginas  =   <?php echo ceil($total/2);?>;
+var UrlPagina   =   '<?php echo $pagina_url;?>';
+
+function cargardatos(){
+    // Petición AJAX
+    debugger;
+    if(pagina<TotalPaginas+1){
+    $("#loader").html("<img src='/images/gallery_loading.gif'/>");
+    $.get(UrlPagina,{'page':pagina},
+        function(data){
+            if (data != "") {
+                $(".hfeed").append(data); 
+            }
+        $('#loader').empty();
+    });
+    }
+}
+$(window).scroll(function() {
+  if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+     pagina++;
+     cargardatos();
+  }
+});    
+    
+    jQuery.showCategoryPage=function(urlCategoryPage,pagina){
         $("#loading").show('fast');
         $(".padding-column").fadeOut("fast");
-        $.get(urlCategoryPage, {},
+        $.get(urlCategoryPage, {'page':pagina},
         function(data){
             $(".padding-column").html(data).fadeIn("fast");
              $("#loading").show('hide');
@@ -45,24 +70,25 @@
 <div class="over-padding-column">
     <nav class="sidenav">
         <ul>
-            <?php $cont = 0; ?>
+            <li class="active-link"><a href="#">Todas</a></li>
             <?php foreach($categorias as $categoria): ?>
-            <?php if($categoria->getId()!=$categoria_actual->getId()): ?>
-            <li><a href="<?php echo url_for("publicaciones_categoria", $categoria) ?>"><?php echo $categoria->getCategoria() ?></a></li>
-            <?php else: ?>
-            <li class="active-link"><a href="" ><?php echo $categoria->getCategoria() ?></a></li>
-            <?php endif; ?>
+            <li>
+                <a href="<?php echo url_for("publicaciones_categoria", $categoria) ?>">
+                    <?php echo $categoria->getCategoria() ?>
+                </a>
+            </li>
             <?php endforeach;?>
         </ul>
     </nav>
 </div>
-<div class="padding-column left">
+<div id="contendor-noticias" class="padding-column left">
         <?php include_partial('publicaciones/list', array(
                'pager' => $pager,
                'list_registros'=>$list_registros,
                'categoria_actual'=>$categoria_actual,
                'categorias'=>$categorias,
-               'tipos'=>$tipos
+               'tipos'=>$tipos,
+               'slug'=>$slug
                 )); ?>  
 </div>
-
+<div id="loader"></div>

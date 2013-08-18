@@ -30,6 +30,15 @@ class PublicacionesTable extends Doctrine_Table
         $q->leftJoin($rootAlias . '.CategoriasPublicaciones c');
         return $q;
     }
+    
+    public function getCriteriaTodasLasCategorias(){
+        $q=$this->getCriteriaOrdenada();
+        $rootAlias = $q->getRootAlias();
+        $q->leftJoin($rootAlias . '.CategoriasPublicaciones c');
+        $q->addOrderBy('c.position asc');
+        return $q;
+    }
+    
     public function getPublicacionConGaleria($publicacion){
         $q=$this->getCriteriaOrdenada();
         $q->addWhere('i.publicacion_id=?',$publicacion);

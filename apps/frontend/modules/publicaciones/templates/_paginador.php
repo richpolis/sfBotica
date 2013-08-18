@@ -1,7 +1,9 @@
 <?php if(!$pager==null): ?>
 <div class="paginate">
     <?php if ($pager->haveToPaginate() && $pager->getPage()>1): ?>
-    <a class="previous" href="" onclick="$.showCategoryPage('<?php echo url_for('publicaciones_categoria',array("slug"=>$categoria_actual->getCategoriaSlug(),'page'=>$pager->getPreviousPage())); ?>')">«</a>
+    <button class="previous btn btn-mini" onclick="$.showCategoryPage('<?php echo url_for('publicaciones_categoria',array("slug"=>$categoria_actual->getSlug()));?>','<?php echo $pager->getPreviousPage()?>')">«</button>
+    <?php else:?>
+    <button class="btn btn-mini" disabled="disabled">«</button>
     <?php endif; ?>
     <?php $paginaInicial=(floor($pager->getPage()/6)*6)+1;?>
     <?php $paginaFinal=$paginaInicial+6;?>
@@ -10,12 +12,14 @@
              <?php if ($page == $pager->getPage()): ?>
                  <span class="current-page"><?php echo $page ?></span>
              <?php else: ?>
-                <a href="" onclick="$.showCategoryPage('<?php echo url_for('publicaciones_categoria',array("slug"=>$categoria_actual->getCategoriaSlug(),'page'=>$page)); ?>')"><?php echo $page ?></a>
+                <button class="btn btn-mini" onclick="$.showCategoryPage('<?php echo url_for('publicaciones_categoria',array("slug"=>$categoria_actual->getSlug())); ?>','<?php echo $page?>')"><?php echo $page ?></button>
              <?php endif; ?>
          <?php endif; ?>    
     <?php endforeach; ?> 
     <?php if ($pager->haveToPaginate() && $pager->getPage()<$pager->getLastPage()): ?>
-    <a class="next" href="" onclick="$.showCategoryPage('<?php echo url_for('publicaciones_categoria',array("slug"=>$categoria_actual->getCategoriaSlug(),'page'=>$pager->getNextPage())); ?>')">»</a>
+    <button class="next btn btn-mini" onclick="$.showCategoryPage('<?php echo url_for('publicaciones_categoria',array("slug"=>$categoria_actual->getSlug())); ?>','<?php echo $pager->getNextPage()?>')">»</button>
+    <?php else:?>
+    <button class="btn btn-mini"  disabled="disabled">»</button>
     <?php endif; ?>
 </div>
 <?php endif; ?>

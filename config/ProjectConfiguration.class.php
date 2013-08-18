@@ -16,7 +16,7 @@ class ProjectConfiguration extends sfProjectConfiguration {
         self::$zendLoaded = true;
     }
     public function setup() {
-        $this->setWebDir($this->getRootDir().DIRECTORY_SEPARATOR.'html');
+        //$this->setWebDir($this->getRootDir().DIRECTORY_SEPARATOR.'html');
         $this->enablePlugins('sfDoctrinePlugin');
         $this->enablePlugins('sfDoctrineGuardPlugin');
         $this->enablePlugins('csDoctrineActAsSortablePlugin');
