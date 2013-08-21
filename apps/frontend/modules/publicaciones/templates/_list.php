@@ -3,11 +3,13 @@
 <?php foreach ($list_registros as $registro): ?>
     <article class="post-<?php echo $registro->getId() ?> post type-post status-publish format-standard hentry category-nieuws">
         <time class="updated published" datetime="<?php echo $registro->getCreatedAt() ?>">
-            <?php if(strlen($slug)==0):?>
-            <?php echo $registro->getCategoriasPublicaciones()->getCategoria();?>&nbsp;
-            <?php endif;?>
             <?php echo $registro->getDateTimeObject('created_at')->format('m.d.Y')  ?>
             <span class="underscore-medium inline-block"></span>
+            <?php if(strlen($slug)==0):?>
+            <span class="categoria-publicacion">
+            &nbsp;<?php echo $registro->getCategoriasPublicaciones()->getCategoria();?>
+            </span>
+            <?php endif;?>
         </time>
         <div class="clear" style="height:10px;"></div>
         <div class="column column-left">

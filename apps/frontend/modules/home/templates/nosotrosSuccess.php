@@ -15,11 +15,12 @@
         <?php echo $contenido->getPagina()?>
     </h1>
 <div class="padding-column">
-    <?php if ($contenido->getImagen() == null): ?>
-        <div class="unreset-css" style="text-align: justify;"> 
-        <?php echo $contenido->getContenido(ESC_RAW) ?>
-        </div>    
-    <?php else: ?>
+    <?php if ($contenido->getImagen() != null): ?>
+    <div>
         <img src="/uploads/assets/<?php echo $contenido->getImagen() ?>" style="max-width: 908px;"/>
+    </div>    
     <?php endif; ?>
+    <div class="unreset-css" style="text-align: justify;"> 
+        <?php echo $contenido->getContenido(ESC_RAW) ?>
+    </div>    
 </div>

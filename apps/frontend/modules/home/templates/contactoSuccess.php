@@ -24,15 +24,14 @@
 
 <div class="padding-column">
         <div class="column column-medium">
-            <?php if ($contenido->getImagen() == null): ?>
-                <div class="unreset-css"> 
-                    <?php echo $contenido->getContenido(ESC_RAW) ?>
-                </div>    
-            <?php else: ?>
+            <?php if ($contenido->getImagen() != null): ?>
                 <div >
                     <img src="/uploads/assets/<?php echo $contenido->getImagen() ?>" style="max-width: 908px;" />
                 </div>
             <?php endif; ?>
+            <div class="unreset-css"> 
+                <?php echo $contenido->getContenido(ESC_RAW) ?>
+            </div>    
         </div>
         <div class="column column-medium">
             <div id="dialog-form">                

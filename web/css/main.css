@@ -900,3 +900,9 @@ html[xmlns] .clear {
     margin: 3px;
     border: 2px solid white;
 }
+
+.categoria-publicacion
+{
+    font-size: 20px;
+    color: #ff8100;
+}

@@ -49,11 +49,11 @@ class PaginasForm extends BasePaginasForm
       
       $this->validatorSchema['fondo_delete'] = new sfValidatorBoolean();
       
-      /*$this->widgetSchema['contenido'] = new sfWidgetFormTextareaTinyMCE(array(
+      $this->widgetSchema['contenido'] = new sfWidgetFormTextareaTinyMCE(array(
                 'width' => 500,
                 'height' => 250,
-       ));*/
-      $this->widgetSchema['contenido'] = new sfWidgetFormTextarea(array(), array('cols' => '60','rows'=>'8'));
+       ));
+      /*$this->widgetSchema['contenido'] = new sfWidgetFormTextarea(array(), array('cols' => '60','rows'=>'8'));*/
      
   }
 }

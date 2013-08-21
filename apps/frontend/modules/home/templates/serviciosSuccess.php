@@ -17,11 +17,10 @@
 </h1>
 
 <div class="padding-column">
-    <?php if ($contenido->getImagen() == null): ?>
-        <div class="unreset-css">
-        <?php echo $contenido->getContenido(ESC_RAW) ?>
-        </div>    
-    <?php else: ?>
-        <img src="/uploads/assets/<?php echo $contenido->getImagen() ?>" style="max-width: 908px;" />
+    <?php if ($contenido->getImagen() != null): ?>
+       <img src="/uploads/assets/<?php echo $contenido->getImagen() ?>" style="max-width: 908px;" />
     <?php endif; ?>
+    <div class="unreset-css">
+      <?php echo $contenido->getContenido(ESC_RAW) ?>
+    </div>       
 </div>
